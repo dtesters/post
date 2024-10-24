@@ -18,7 +18,7 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json(); 
                 
-               
+                
                 data.posts.sort((a, b) => b.id - a.id);
                 
                 const postsContainer = document.getElementById('posts-container');
@@ -31,7 +31,7 @@
                     const postDiv = document.createElement('div');
                     postDiv.classList.add('post');
 
-                   
+                    
                     const timeAgo = getTimeAgo(post.timestamp);
 
                     postDiv.innerHTML = `
@@ -39,7 +39,7 @@
                         <div class="post-content">
                             <a href="profile.html" class="display-name">${post.author}</a>
                             <a href="profile.html" class="username">${post.username}</a>
-                            <span class="timestamp">${timeAgo} ago</span>
+                            <span class="timestamp">${timeAgo}</span> <!-- Removed "ago" here -->
                             <p>${post.content}</p>
                             <a href="${post.viewPostLink}" class="view-post">View Post</a>
                     `;
@@ -80,7 +80,7 @@
             if (interval > 1) return `${interval} months ago`;
             if (interval === 1) return "1 month ago";
 
-            interval = Math.floor(seconds / 86400); 
+            interval = Math.floor(seconds / 86400);
             if (interval > 1) return `${interval} days ago`;
             if (interval === 1) return "1 day ago";
 
