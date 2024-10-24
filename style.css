@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text for contrast */
+    line-height: 1.6; /* Improve readability */
+}
+
+h1 {
+    color: #e0e0e0; /* Lighter heading color */
+}
+
+.post {
+    background-color: #1e1e1e; /* Slightly lighter dark for posts */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Spacing within posts */
+    margin-bottom: 20px; /* Spacing between posts */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+    position: relative;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly lower */
+    animation: fadeInUp 0.5s forwards; /* Animation effect */
+}
+
+.pfp {
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #ffffff; /* White border around profile picture */
+    user-select: none; /* Prevent text selection */
+    pointer-events: none; /* Prevent mouse interactions */
+    -webkit-user-drag: none; /* Prevent dragging on WebKit browsers */
+    -moz-user-drag: none; /* Prevent dragging on Firefox */
+}
+
+.post-content {
+    overflow: hidden; /* Clear floats */
+    user-select: none; /* Prevent text selection for post content */
+}
+
+.display-name {
+    font-weight: bold;
+    color: #00bcd4; /* Accent color for display name */
+    text-decoration: none; /* Remove underline for links */
+    user-select: none; /* Prevent text selection */
+}
+
+.username {
+    color: #b0bec5; /* Lighter color for username */
+    font-size: 14px; /* Slightly smaller font for username */
+    margin-left: 5px; /* Spacing between display name and username */
+    text-decoration: none; /* Remove underline for links */
+    user-select: none; /* Prevent text selection */
+}
+
+.timestamp {
+    color: #b0bec5; /* Lighter color for timestamps */
+    font-size: 12px;
+    display: block; /* Stack below username */
+    margin-top: 2px; /* Space between username and timestamp */
+    user-select: none; /* Prevent text selection */
+}
+
+a {
+    color: #00bcd4; /* Accent color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Profile page styles */
+.profile {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.profile .pfp {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #00bcd4; /* Accent border for profile picture */
+    user-select: none; /* Prevent text selection */
+    pointer-events: none; /* Prevent mouse interactions */
+    -webkit-user-drag: none; /* Prevent dragging on WebKit browsers */
+    -moz-user-drag: none; /* Prevent dragging on Firefox */
+}
+
+.profile .display-name,
+.profile .username {
+    color: #00bcd4; /* Accent color for profile names */
+    user-select: none; /* Prevent text selection */
+}
+
+.profile .username {
+    font-size: 18px; /* Larger font size for username on profile */
+}
+
+.profile .bio {
+    color: #b0bec5; /* Lighter color for bio */
+    margin: 10px 0; /* Spacing for bio */
+    user-select: none; /* Prevent text selection */
+}
+
+.profile .join-date {
+    color: #b0bec5; /* Lighter color for join date */
+    font-size: 14px;
+    user-select: none; /* Prevent text selection */
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #00bcd4; /* Button background */
+    color: #fff; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+}
+
+.back-button:hover {
+    background-color: #0097a7; /* Darker shade on hover */
+}
+
+/* Recent posts styles */
+.profile-posts {
+    margin-top: 20px;
+}
+
+.profile-posts h3 {
+    color: #e0e0e0; /* Color for recent posts heading */
+}
+
+.profile-posts .post {
+    background-color: #1e1e1e; /* Slightly lighter dark for profile posts */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Spacing within posts */
+    margin-top: 10px; /* Spacing between profile posts */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+    user-select: none; /* Prevent text selection */
+}
+
+.profile-posts .view-post {
+    color: #00bcd4; /* Accent color for view post links */
+    text-decoration: none; /* Remove underline */
+}
+
+.profile-posts .view-post:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Final opacity */
+        transform: translateY(0); /* Reset transform */
+    }
+}
