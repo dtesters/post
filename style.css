@@ -74,6 +74,15 @@ a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
+/* Add this class for images inside posts */
+.post img {
+    max-width: 100%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: gives rounded corners to images */
+    margin-top: 10px; /* Spacing above the image */
+    margin-bottom: 10px; /* Spacing below the image */
+}
+
 /* Profile page styles */
 .profile {
     max-width: 600px;
