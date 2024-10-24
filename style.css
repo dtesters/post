@@ -156,20 +156,6 @@ a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Image styles */
-.image-container {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center align images */
-    margin: 10px 0; /* Margin above and below images */
-}
-
-.image-container img {
-    max-width: 100%; /* Ensure the image fits within the container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Optional: limit height to prevent overflow */
-    border-radius: 5px; /* Rounded corners for images */
-}
-
 /* Animation keyframes */
 @keyframes fadeInUp {
     to {
