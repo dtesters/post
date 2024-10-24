@@ -16,9 +16,9 @@
             "timestamp": "Oct 24, 2024",
             "content": "Boo!",
             "viewPostLink": "./post2.html",
-            "attachment": {
-               // "type": "image",
-               // "url": ""
+            "attachment": { 
+                "type": "null",
+                "url": ""
             }
         }
         
