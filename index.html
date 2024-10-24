@@ -9,29 +9,29 @@
 <body>
     <h1>Lotus' Posting Wall</h1>
 
-    <div id="posts-container"></div> <!-- Container for posts -->
+    <div id="posts-container"></div> 
 
     <script>
         async function fetchPosts() {
             try {
-                const response = await fetch('posts.json'); // Fetch JSON file
+                const response = await fetch('posts.json'); 
                 if (!response.ok) throw new Error('Network response was not ok');
-                const data = await response.json(); // Parse JSON
+                const data = await response.json(); 
                 
-                // Sort posts by ID (latest first)
+               
                 data.posts.sort((a, b) => b.id - a.id);
                 
                 const postsContainer = document.getElementById('posts-container');
 
-                // Clear the container
+                
                 postsContainer.innerHTML = '';
 
-                // Iterate through posts and display them
+                
                 data.posts.forEach(post => {
                     const postDiv = document.createElement('div');
                     postDiv.classList.add('post');
 
-                    // Calculate the time ago
+                   
                     const timeAgo = getTimeAgo(post.timestamp);
 
                     postDiv.innerHTML = `
@@ -44,7 +44,7 @@
                             <a href="${post.viewPostLink}" class="view-post">View Post</a>
                     `;
 
-                    // Check if there's an attachment
+                    
                     if (post.attachment) {
                         if (post.attachment.type === 'image') {
                             postDiv.innerHTML += `<img src="${post.attachment.url}" alt="Attachment" class="attachment-image">`;
@@ -58,8 +58,8 @@
                         }
                     }
 
-                    postDiv.innerHTML += `</div>`; // Close post-content div
-                    postsContainer.appendChild(postDiv); // Add post to container
+                    postDiv.innerHTML += `</div>`; 
+                    postsContainer.appendChild(postDiv); 
                 });
             } catch (error) {
                 console.error('Error fetching posts:', error);
@@ -68,34 +68,34 @@
         }
 
         function getTimeAgo(timestamp) {
-            const now = new Date(); // Current date and time
-            const postDate = new Date(timestamp); // Convert the timestamp to a Date object
-            const seconds = Math.floor((now - postDate) / 1000); // Calculate the difference in seconds
+            const now = new Date(); 
+            const postDate = new Date(timestamp); 
+            const seconds = Math.floor((now - postDate) / 1000); 
 
-            let interval = Math.floor(seconds / 31536000); // Years
+            let interval = Math.floor(seconds / 31536000); 
             if (interval > 1) return `${interval} years ago`;
             if (interval === 1) return "1 year ago";
 
-            interval = Math.floor(seconds / 2592000); // Months
+            interval = Math.floor(seconds / 2592000); 
             if (interval > 1) return `${interval} months ago`;
             if (interval === 1) return "1 month ago";
 
-            interval = Math.floor(seconds / 86400); // Days
+            interval = Math.floor(seconds / 86400); 
             if (interval > 1) return `${interval} days ago`;
             if (interval === 1) return "1 day ago";
 
-            interval = Math.floor(seconds / 3600); // Hours
+            interval = Math.floor(seconds / 3600); 
             if (interval > 1) return `${interval} hours ago`;
             if (interval === 1) return "1 hour ago";
 
-            interval = Math.floor(seconds / 60); // Minutes
+            interval = Math.floor(seconds / 60); 
             if (interval > 1) return `${interval} minutes ago`;
             if (interval === 1) return "1 minute ago";
 
-            return seconds + " seconds ago"; // Fallback for seconds
+            return seconds + " seconds ago"; 
         }
 
-        fetchPosts(); // Call the function to fetch and display posts
+        fetchPosts(); 
     </script>
 </body>
 </html>
