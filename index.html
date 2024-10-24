@@ -17,6 +17,10 @@
                 const response = await fetch('posts.json'); // Fetch JSON file
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json(); // Parse JSON
+                
+                // Sort posts by ID (latest first)
+                data.posts.sort((a, b) => b.id - a.id);
+                
                 const postsContainer = document.getElementById('posts-container');
 
                 // Clear the container
@@ -27,13 +31,17 @@
                     const postDiv = document.createElement('div');
                     postDiv.classList.add('post');
 
+                    // Calculate the time ago
+                    const timeAgo = getTimeAgo(new Date(post.timestamp));
+
                     postDiv.innerHTML = `
                         <img src="https://cdn.discordapp.com/guilds/820745488231301210/users/591534252307513347/avatars/c7d07768cde4265f0faa51f502ab3551.webp?size=1024&format=webp&width=480&height=480" alt="Profile Picture" class="pfp">
                         <div class="post-content">
                             <a href="profile.html" class="display-name">${post.author}</a>
                             <a href="profile.html" class="username">${post.username}</a>
-                            <span class="timestamp">${post.timestamp}</span>
+                            <span class="timestamp">${timeAgo} ago</span>
                             <p>${post.content}</p>
+                            <a href="${post.viewPostLink}" class="view-post">View Post</a>
                     `;
 
                     // Check if there's an attachment
@@ -50,16 +58,35 @@
                         }
                     }
 
-                    postDiv.innerHTML += `
-                            <a href="${post.viewPostLink}" class="view-post">View Post</a>
-                        </div>`; // Close post-content div
-
+                    postDiv.innerHTML += `</div>`; // Close post-content div
                     postsContainer.appendChild(postDiv); // Add post to container
                 });
             } catch (error) {
                 console.error('Error fetching posts:', error);
                 document.getElementById('posts-container').innerHTML = '<p>Failed to load posts.</p>';
             }
+        }
+
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const seconds = Math.floor((now - timestamp) / 1000);
+            let interval = Math.floor(seconds / 31536000);
+
+            if (interval > 1) return interval + " years";
+
+            interval = Math.floor(seconds / 2592000); // 30 days
+            if (interval > 1) return interval + " months";
+
+            interval = Math.floor(seconds / 86400); // 1 day
+            if (interval > 1) return interval + " days";
+
+            interval = Math.floor(seconds / 3600); // 1 hour
+            if (interval > 1) return interval + " hours";
+
+            interval = Math.floor(seconds / 60); // 1 minute
+            if (interval > 1) return interval + " minutes";
+
+            return seconds + " seconds";
         }
 
         fetchPosts(); // Call the function to fetch and display posts
