@@ -17,8 +17,8 @@
             "content": "Boo!",
             "viewPostLink": "./post2.html",
             "attachment": { 
-                "type": null,
-                "url": ""
+                "type": "null",  
+                "url": "example_image_url.jpg"  
             }
         },
         {
@@ -38,10 +38,9 @@
             "content": "There goes another unfinished task",
             "viewPostLink": "./post2.html",
             "attachment": { 
-                "type": null,
-                "url": ""
+                "type": "null",  
+                "url": ""  
             }
-        },
-        
+        }
     ]
 }
