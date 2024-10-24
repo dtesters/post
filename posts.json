@@ -4,7 +4,7 @@
             "id": 1,
             "author": "MilitaryLotus",
             "username": "@dtester",
-            "timestamp": "Oct 24, 2024",
+            "timestamp": "2024-10-24T10:00:00",
             "content": "Welcome to my shit posting site where I do nothing.",
             "viewPostLink": "./post1.html",
             "attachment": null
@@ -13,7 +13,7 @@
             "id": 2,
             "author": "MilitaryLotus",
             "username": "@dtester",
-            "timestamp": "Oct 24, 2024",
+            "timestamp": "2024-10-24T10:05:00",
             "content": "Boo!",
             "viewPostLink": "./post2.html",
             "attachment": { 
@@ -25,7 +25,7 @@
             "id": 3,
             "author": "MilitaryLotus",
             "username": "@dtester",
-            "timestamp": "Oct 24, 2024",
+            "timestamp": "2024-10-24T10:10:00",
             "content": "Too much pain for a site...",
             "viewPostLink": "",
             "attachment": null
