@@ -4,7 +4,7 @@
             "id": 1,
             "author": "MilitaryLotus",
             "username": "@dtester",
-            "timestamp": "2024-10-24T15:00:00Z",  
+            "timestamp": "2024-10-24T15:49:00Z",  
             "content": "Welcome to my shit posting site where I do nothing.",
             "viewPostLink": "./post1.html",
             "attachment": null
@@ -13,7 +13,7 @@
             "id": 2,
             "author": "MilitaryLotus",
             "username": "@dtester",
-            "timestamp": "2024-10-24T15:05:00Z",
+            "timestamp": "2024-10-24T16:05:00Z",
             "content": "Boo!",
             "viewPostLink": "./post2.html",
             "attachment": { 
@@ -29,6 +29,19 @@
             "content": "Too much pain for a site...",
             "viewPostLink": "",
             "attachment": null
-        }
+        },
+        {
+            "id": 4,
+            "author": "MilitaryLotus",
+            "username": "@dtester",
+            "timestamp": "2024-10-24T19:27:00Z",
+            "content": "There goes another unfinished task",
+            "viewPostLink": "./post2.html",
+            "attachment": { 
+                "type": null,
+                "url": ""
+            }
+        },
+        
     ]
 }
