@@ -17,8 +17,8 @@
             "content": "Boo!",
             "viewPostLink": "./post2.html",
             "attachment": {
-                "type": "image",
-                "url": ""
+               // "type": "image",
+               // "url": ""
             }
         }
         
